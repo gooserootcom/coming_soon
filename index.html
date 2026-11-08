@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gooseroot — Coming soon</title>
+<meta name="description" content="Gooseroot is launching soon. Leave your email to be the first to know.">
+<meta name="theme-color" content="#D4031A">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gooseroot.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gooseroot">
+<meta property="og:title" content="Gooseroot — Coming soon">
+<meta property="og:description" content="Something new is coming together. Be the first to know when we launch.">
+<meta property="og:url" content="https://www.gooseroot.com/">
+<meta property="og:image" content="https://www.gooseroot.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gooseroot — Coming soon">
+<meta name="twitter:description" content="Something new is coming together. Be the first to know when we launch.">
+<meta name="twitter:image" content="https://www.gooseroot.com/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/poppins-bold.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;font-display:swap;src:url('assets/fonts/poppins-regular.woff') format('woff')}
+@font-face{font-family:'Poppins';font-weight:500;font-display:swap;src:url('assets/fonts/poppins-medium.woff') format('woff')}
+@font-face{font-family:'Poppins';font-weight:700;font-display:swap;src:url('assets/fonts/poppins-bold.woff') format('woff')}
+:root{--scarlet:#F0140A;--crimson:#B8002E;--red:#D4031A;--wine:#5C0012;--blush:#FFF4F4;--white:#fff;--soft:rgba(255,255,255,.82)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;
+  font-family:'Poppins',Inter,Arial,sans-serif;color:var(--white);-webkit-font-smoothing:antialiased;
+  background:linear-gradient(135deg,var(--scarlet) 0%,var(--red) 45%,var(--crimson) 100%)}
+a{color:var(--white)}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* large, faint rings in the background echo the logo */
+.rings{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.rings span{position:absolute;border-radius:50%;border:clamp(40px,7vw,110px) solid rgba(255,255,255,.055)}
+.rings .r1{width:min(78vw,900px);aspect-ratio:1;left:-22vw;top:-18vw}
+.rings .r2{width:min(70vw,820px);aspect-ratio:1;right:-24vw;bottom:-26vw}
+
+header,main,footer{position:relative;z-index:1}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px clamp(20px,5vw,56px)}
+header .wm{height:26px;width:auto;display:block}
+.tag{font-size:12.5px;font-weight:600;letter-spacing:.2em;color:var(--soft)}
+
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:26px;padding:12px clamp(20px,5vw,56px) 48px}
+main .grl{--grl-size:clamp(190px,30vw,300px);--grl-speed:4.2s;margin-bottom:6px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+  font-size:12.5px;font-weight:600;letter-spacing:.22em}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+h1{margin:0;font-size:clamp(36px,6.2vw,70px);font-weight:700;letter-spacing:-.025em;line-height:1.05;max-width:15ch}
+.lead{margin:0;font-size:clamp(16px,1.6vw,19px);line-height:1.65;color:var(--soft);max-width:35rem}
+
+.notify{display:flex;gap:8px;width:100%;max-width:480px;padding:6px;border-radius:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);margin-top:4px}
+.notify:focus-within{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.7)}
+.notify input{flex:1;min-width:0;min-height:50px;padding:0 14px;border:0;outline:0;background:transparent;color:#fff;font:inherit;font-size:16px}
+.notify input::placeholder{color:rgba(255,255,255,.7)}
+.notify button{min-height:50px;padding:0 24px;border:0;border-radius:12px;background:#fff;color:var(--crimson);font:inherit;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease}
+.notify button:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(92,0,18,.35)}
+.note{min-height:1.5em;margin:-10px 0 0;font-size:14px;color:var(--soft)}
+.note a{color:#fff}
+
+.countdown{display:none;gap:10px}
+.countdown.on{display:flex}
+.countdown div{min-width:78px;padding:12px 8px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
+.countdown b{display:block;font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.countdown span{font-size:10.5px;letter-spacing:.18em;color:var(--soft)}
+
+footer{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding:22px clamp(20px,5vw,56px);font-size:13.5px;color:var(--soft);border-top:1px solid rgba(255,255,255,.16)}
+footer a{color:#fff;text-decoration:none} footer a:hover{text-decoration:underline}
+footer .domains{display:flex;gap:18px}
+
+@media (max-width:540px){
+  .notify{flex-direction:column;padding:8px}
+  .notify button{width:100%}
+  .tag{display:none}
+  .countdown div{min-width:64px}
+}
+/* Lens loading animation (brand motion kit) */
+.grl{
+  --grl-size: 96px;           /* symbol width */
+  --grl-speed: 3s;
+  width: var(--grl-size);
+  height: calc(var(--grl-size) * 0.496);
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+}
+.grl .grl-ring{ fill: none; stroke-width: 161; stroke-linecap: round; }
+.grl .grl-a, .grl .grl-b, .grl .grl-leaf, .grl .grl-sheen, .grl .grl-breath{ transform-box: view-box; }
+.grl .grl-breath{ transform-origin: 225px 0px; animation: grl-breath var(--grl-speed) ease-in-out infinite; }
+.grl .grl-a{ animation: grl-slide-a var(--grl-speed) cubic-bezier(.7,0,.25,1) infinite; }
+.grl .grl-b{ animation: grl-slide-b var(--grl-speed) cubic-bezier(.7,0,.25,1) infinite; }
+.grl .grl-ra{ animation: grl-draw-a var(--grl-speed) cubic-bezier(.6,0,.3,1) infinite; }
+.grl .grl-rb{ animation: grl-draw-b var(--grl-speed) cubic-bezier(.6,0,.3,1) infinite; }
+.grl .grl-leaf{ transform-origin: 225px 0px; animation: grl-leaf var(--grl-speed) cubic-bezier(.3,1.4,.5,1) infinite; }
+.grl .grl-sheen{ animation: grl-sheen var(--grl-speed) cubic-bezier(.45,0,.2,1) infinite; }
+
+@keyframes grl-draw-a{ 0%{stroke-dashoffset:100} 30%,82%{stroke-dashoffset:0} 100%{stroke-dashoffset:100} }
+@keyframes grl-draw-b{ 0%{stroke-dashoffset:100} 30%,82%{stroke-dashoffset:0} 100%{stroke-dashoffset:100} }
+@keyframes grl-slide-a{ 0%,22%{transform:translateX(-130px)} 46%,82%{transform:translateX(0)} 100%{transform:translateX(-130px)} }
+@keyframes grl-slide-b{ 0%,22%{transform:translateX(130px)}  46%,82%{transform:translateX(0)} 100%{transform:translateX(130px)} }
+@keyframes grl-leaf{ 0%,44%{transform:scale(0)} 56%,76%{transform:scale(1)} 84%,100%{transform:scale(0)} }
+@keyframes grl-sheen{ 0%,54%{transform:translateX(-760px) skewX(-18deg)} 76%,100%{transform:translateX(980px) skewX(-18deg)} }
+@keyframes grl-breath{ 0%,52%{transform:scale(1)} 62%{transform:scale(1.045)} 72%,100%{transform:scale(1)} }
+
+/* White version (for red or dark backgrounds) */
+.grl.grl--white .grl-ring{ stroke: #FFFFFF; }
+
+/* ---------- Mini: buttons and inline text — the rings orbit and swap places ---------- */
+.grl.grl--mini{ --grl-size: 30px; }
+.grl.grl--mini .grl-a, .grl.grl--mini .grl-b, .grl.grl--mini .grl-ra, .grl.grl--mini .grl-rb,
+.grl.grl--mini .grl-leaf, .grl.grl--mini .grl-sheen, .grl.grl--mini .grl-breath{ animation: none; }
+.grl.grl--mini .grl-ra, .grl.grl--mini .grl-rb{ stroke-dashoffset: 0; }
+.grl.grl--mini .grl-breath{ animation: grl-orbit 1.1s cubic-bezier(.65,0,.35,1) infinite; }
+@keyframes grl-orbit{ to{ transform: rotate(180deg); } }
+
+/* ---------- Reduced motion: show the finished logo with a calm fade ---------- */
+@media (prefers-reduced-motion: reduce){
+  .grl *, .grl-splash .grl-word, .grl-splash .grl-bar::after{ animation: none !important; }
+  .grl .grl-ra, .grl .grl-rb{ stroke-dashoffset: 0; }
+  .grl .grl-a, .grl .grl-b{ transform: none; }
+  .grl .grl-leaf{ transform: scale(1); }
+  .grl .grl-sheen{ display: none; }
+  .grl{ animation: grl-calm 2s ease-in-out infinite; }
+}
+@keyframes grl-calm{ 50%{ opacity: .6; } }
+
+@media (prefers-reduced-motion:reduce){.pill .dot{animation:none}}
+</style>
+</head>
+<body>
+<div class="rings" aria-hidden="true"><span class="r1"></span><span class="r2"></span></div>
+
+<header>
+  <a href="./" aria-label="Gooseroot home"><svg class="wm" viewBox="0 -760 4777 992" role="img" aria-label="Gooseroot"><defs><mask id="w3300002505953973699" maskUnits="userSpaceOnUse" x="-100" y="-1000" width="4977" height="1400"><rect x="-100" y="-1000" width="4977" height="1400" fill="#fff"/><path d="M1210.0 -460.3725447800741 A289 289 0 0 1 1210.0 -97.62745521992585 A289 289 0 0 1 1210.0 -460.3725447800741 Z M3851.0 -460.3725447800741 A289 289 0 0 1 3851.0 -97.62745521992585 A289 289 0 0 1 3851.0 -460.3725447800741 Z " fill="#000" stroke="#000" stroke-width="44" stroke-linejoin="round"/></mask></defs><path fill="#FFFFFF" fill-rule="evenodd" d="M446 -479V-558H617V-1Q617 76 586.5 138.5Q556 201 493.5 238.0Q431 275 338 275Q214 275 137.0 216.5Q60 158 49 58H218Q226 90 256.0 108.5Q286 127 330 127Q383 127 414.5 96.5Q446 66 446 -1V-80Q421 -41 377.0 -16.5Q333 8 274 8Q205 8 149.0 -27.5Q93 -63 60.5 -128.5Q28 -194 28 -280Q28 -366 60.5 -431.0Q93 -496 149.0 -531.0Q205 -566 274 -566Q333 -566 377.5 -542.0Q422 -518 446 -479ZM324 -417Q273 -417 237.5 -380.5Q202 -344 202 -280Q202 -216 237.5 -178.5Q273 -141 324 -141Q375 -141 410.5 -178.0Q446 -215 446 -279Q446 -343 410.5 -380.0Q375 -417 324 -417ZM1774 -183H1943Q1946 -154 1970.0 -136.0Q1994 -118 2029 -118Q2061 -118 2078.5 -130.5Q2096 -143 2096 -163Q2096 -187 2071.0 -198.5Q2046 -210 1990 -224Q1930 -238 1890.0 -253.5Q1850 -269 1821.0 -302.5Q1792 -336 1792 -393Q1792 -441 1818.5 -480.5Q1845 -520 1896.5 -543.0Q1948 -566 2019 -566Q2124 -566 2184.5 -514.0Q2245 -462 2254 -376H2096Q2092 -405 2070.5 -422.0Q2049 -439 2014 -439Q1984 -439 1968.0 -427.5Q1952 -416 1952 -396Q1952 -372 1977.5 -360.0Q2003 -348 2057 -336Q2119 -320 2158.0 -304.5Q2197 -289 2226.5 -254.5Q2256 -220 2257 -162Q2257 -113 2229.5 -74.5Q2202 -36 2150.5 -14.0Q2099 8 2031 8Q1958 8 1901.0 -17.0Q1844 -42 1811.0 -85.5Q1778 -129 1774 -183ZM2873 -238H2486Q2490 -186 2519.5 -158.5Q2549 -131 2592 -131Q2656 -131 2681 -185H2863Q2849 -130 2812.5 -86.0Q2776 -42 2721.0 -17.0Q2666 8 2598 8Q2516 8 2452.0 -27.0Q2388 -62 2352.0 -127.0Q2316 -192 2316 -279Q2316 -366 2351.5 -431.0Q2387 -496 2451.0 -531.0Q2515 -566 2598 -566Q2679 -566 2742.0 -532.0Q2805 -498 2840.5 -435.0Q2876 -372 2876 -288Q2876 -264 2873 -238ZM2701 -333Q2701 -377 2671.0 -403.0Q2641 -429 2596 -429Q2553 -429 2523.5 -404.0Q2494 -379 2487 -333ZM3300 -564V-383H3253Q3189 -383 3157.0 -355.5Q3125 -328 3125 -259V0H2954V-558H3125V-465Q3155 -511 3200.0 -537.5Q3245 -564 3300 -564ZM4756 -145V0H4669Q4576 0 4524.0 -45.5Q4472 -91 4472 -194V-416H4404V-558H4472V-694H4643V-558H4755V-416H4643V-192Q4643 -167 4655.0 -156.0Q4667 -145 4695 -145Z M696 -279 a289 289 0 1 0 578 0 a289 289 0 1 0 -578 0 Z M857 -279 a128 128 0 1 1 256 0 a128 128 0 1 1 -256 0 Z M1146 -279 a289 289 0 1 0 578 0 a289 289 0 1 0 -578 0 Z M1307 -279 a128 128 0 1 1 256 0 a128 128 0 1 1 -256 0 Z M3337 -279 a289 289 0 1 0 578 0 a289 289 0 1 0 -578 0 Z M3498 -279 a128 128 0 1 1 256 0 a128 128 0 1 1 -256 0 Z M3787 -279 a289 289 0 1 0 578 0 a289 289 0 1 0 -578 0 Z M3948 -279 a128 128 0 1 1 256 0 a128 128 0 1 1 -256 0 Z " mask="url(#w3300002505953973699)"/><path fill="none" d="M1210.0 -460.3725447800741 A289 289 0 0 1 1210.0 -97.62745521992585 A289 289 0 0 1 1210.0 -460.3725447800741 Z M3851.0 -460.3725447800741 A289 289 0 0 1 3851.0 -97.62745521992585 A289 289 0 0 1 3851.0 -460.3725447800741 Z "/></svg></a>
+  <span class="tag">LAUNCHING SOON</span>
+</header>
+
+<main>
+  <svg class="grl grl--white" viewBox="-440 -310 1340 620" role="img" aria-label="Gooseroot"><defs><linearGradient id="grlG" gradientUnits="userSpaceOnUse" x1="-309" y1="0" x2="759" y2="0"><stop offset="0" stop-color="#F0140A"/><stop offset="1" stop-color="#B8002E"/></linearGradient><linearGradient id="grlS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="csM" maskUnits="userSpaceOnUse" x="-440" y="-310" width="1340" height="620"><rect x="-440" y="-310" width="1340" height="620" fill="#fff"/><path class="grl-leaf" d="M225.0 -181.37254478007415 A289 289 0 0 1 225.0 181.37254478007415 A289 289 0 0 1 225.0 -181.37254478007415 Z" fill="#000" stroke="#000" stroke-width="44" stroke-linejoin="round"/></mask><clipPath id="csC"><path clip-rule="evenodd" d="M-289 0a289 289 0 1 0 578 0a289 289 0 1 0-578 0ZM-128 0a128 128 0 1 1 256 0a128 128 0 1 1-256 0ZM161 0a289 289 0 1 0 578 0a289 289 0 1 0-578 0ZM322 0a128 128 0 1 1 256 0a128 128 0 1 1-256 0Z"/></clipPath></defs><g class="grl-breath"><g mask="url(#csM)"><g class="grl-a"><path class="grl-ring grl-ra" d="M0 -208.5 A208.5 208.5 0 1 1 0 208.5 A208.5 208.5 0 1 1 0 -208.5" pathLength="100" stroke-dasharray="100" stroke="url(#grlG)"/></g><g class="grl-b"><path class="grl-ring grl-rb" d="M450 208.5 A208.5 208.5 0 1 1 450 -208.5 A208.5 208.5 0 1 1 450 208.5" pathLength="100" stroke-dasharray="100" stroke="url(#grlG)"/></g><g clip-path="url(#csC)"><rect class="grl-sheen" x="-300" y="-320" width="220" height="640" fill="url(#grlS)"/></g></g></g></svg>
+  <span class="pill"><span class="dot" aria-hidden="true"></span>COMING SOON</span>
+  <h1>Something new is coming together.</h1>
+  <p class="lead">We're putting the finishing touches on Gooseroot. Leave your email and you'll be the first to know when we launch.</p>
+
+  <div class="countdown" id="countdown" aria-live="polite">
+    <div><b id="cd-d">00</b><span>DAYS</span></div>
+    <div><b id="cd-h">00</b><span>HOURS</span></div>
+    <div><b id="cd-m">00</b><span>MINUTES</span></div>
+    <div><b id="cd-s">00</b><span>SECONDS</span></div>
+  </div>
+
+  <form class="notify" id="notify" novalidate>
+    <label for="email" class="sr-only">Email address</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+    <button type="submit">Notify me</button>
+  </form>
+  <p class="note" id="note" role="status"></p>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Gooseroot. All rights reserved.</span>
+  <span class="domains"><a href="https://www.gooseroot.com">gooseroot.com</a><a href="https://www.gooseroot.in">gooseroot.in</a></span>
+  <span>Contact: <a id="contact" href="mailto:hello@gooseroot.com">hello@gooseroot.com</a></span>
+</footer>
+
+<script>
+/* ===== SETTINGS: edit these three lines ===== */
+var CONTACT_EMAIL = 'hello@gooseroot.com';  // shown in the footer, and used when no form service is set
+var FORM_ENDPOINT = '';                     // e.g. 'https://formspree.io/f/xxxxxx' to collect sign-ups automatically
+var LAUNCH_DATE   = '';                     // e.g. '2027-01-15T10:00:00+05:30' to show a countdown; '' hides it
+/* ============================================ */
+(function () {
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var c = document.getElementById('contact'); c.href = 'mailto:' + CONTACT_EMAIL; c.textContent = CONTACT_EMAIL;
+
+  if (LAUNCH_DATE) {
+    var target = new Date(LAUNCH_DATE).getTime(), box = document.getElementById('countdown');
+    if (!isNaN(target)) {
+      box.classList.add('on');
+      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+      var tick = function () {
+        var t = Math.max(0, target - Date.now());
+        document.getElementById('cd-d').textContent = pad(Math.floor(t / 864e5));
+        document.getElementById('cd-h').textContent = pad(Math.floor(t / 36e5) % 24);
+        document.getElementById('cd-m').textContent = pad(Math.floor(t / 6e4) % 60);
+        document.getElementById('cd-s').textContent = pad(Math.floor(t / 1e3) % 60);
+      };
+      tick(); setInterval(tick, 1000);
+    }
+  }
+
+  var form = document.getElementById('notify'), note = document.getElementById('note'), input = document.getElementById('email');
+  var say = function (msg) { note.textContent = msg; };
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('Please enter a valid email address.'); input.focus(); return; }
+    if (FORM_ENDPOINT) {
+      say('Sending…');
+      fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) })
+        .then(function (r) { if (!r.ok) throw 0; form.reset(); say("You're on the list. We'll be in touch at launch."); })
+        .catch(function () { say('Something went wrong. Please email us at ' + CONTACT_EMAIL + '.'); });
+    } else {
+      var href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Notify me at launch') + '&body=' + encodeURIComponent('Please add ' + email + ' to the Gooseroot launch list.');
+      say("Your email app should open to send the request. If it doesn't, email us at " + CONTACT_EMAIL + '.');
+      window.location.href = href;
+    }
+  });
+})();
+</script>
+</body>
+</html>
